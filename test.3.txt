@@ -1,0 +1,715 @@
+DELETE FROM people
+WHERE id = '1';
+select * from people;
+UPDATE mytable SET email='luke_smith@email.com' WHERE id=1
+
+
+UPDATE people
+SET name =
+ (CASE id WHEN 1 THEN 'John'
+ WHEN 2 THEN 'Paul'
+ WHEN 3 THEN 'Kim'
+ END)
+WHERE id IN (1,2,3);
+ select * from people;
+ SELECT * FROM student_mark_sheet WHERE id IN (118, 17, 113, 23, 72)
+ORDER BY FIELD(20, 118, 17, 113, 23, 72);
+select * from student_mark_sheet;
+
+select * from employee;
+
+CREATE TABLE `user` (
+`id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+`name` varchar(30) NOT NULL,
+`course` smallint(5) unsigned DEFAULT NULL,
+PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+CREATE TABLE `course` (
+`id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+`name` varchar(50) NOT NULL,
+PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+ 
+ ALTER TABLE `user`
+ADD CONSTRAINT `FK_course`
+FOREIGN KEY (`course`) REFERENCES `course` (`id`)
+ON UPDATE CASCADE;
+
+select * from user;
+
+CREATE TABLE Table1 (
+ id INT UNSIGNED NOT NULL,
+ created_on DATE NOT NULL,
+ PRIMARY KEY (id)
+)
+CREATE TABLE Table2 (
+ id INT UNSIGNED NOT NULL,
+ personName VARCHAR(255) NOT NULL,
+ PRIMARY KEY (id)
+)
+CREATE TABLE Table3 (
+ id INT UNSIGNED NOT NULL,
+ accountName VARCHAR(255) NOT NULL,
+ PRIMARY KEY (id)
+)
+SELECT
+ t1.id AS table1Id,
+ t2.id AS table2Id,
+ t3.id AS table3Id,
+FROM Table1 t1
+LEFT JOIN Table2 t2 ON t2.id = t1.id
+LEFT JOIN Table3 t3 ON t3.id = t1.id
+
+insert into Table2 values("1","gokul");
+insert into Table2 values("2","gayu");
+insert into Table2 values("3","hari");
+insert into Table2 values("4","jana");
+insert into Table2 values("5","dana");
+  select * from Table1;
+insert into Table3 values('1','266727676');
+insert into Table3 values('2','278638778');
+insert into Table3 values('3','287738782');
+insert into Table3 values('4','398398828');
+insert into Table3 values('5','298398898');
+
+insert into Table1 values('1','22/2/23');
+insert into Table1 values('2','23/3/23');
+insert into Table1 values('3','24/1/23');
+insert into Table1 values('4','12/5/23');
+insert into Table1 values('5','14/2/23');
+
+ SELECT 3+5; 
+SELECT 3.5+2.5; 
+SELECT 3.5+2; 
+SELECT 3-5;
+SELECT 3 * 5; 
+
+SELECT 20 / 4; 
+SELECT 355 / 113; 
+SELECT 10.0 / 0;
+
+SELECT 5 DIV 2; 
+
+SELECT 7 % 3; 
+SELECT 15 MOD 4 ;
+SELECT 15 MOD -4 ;
+SELECT -15 MOD 4 ;
+SELECT -15 MOD -4 ;
+SELECT 3 MOD 2.5 ;
+
+select (1024 * 1024 * 1024 * 1024 *1024 * 1024) + 1 ;
+
+select (1024 * 1024 * 1024 * 1024 *1024 * 1024 * 1024) + 1;
+
+
+SELECT PI(); 
+
+SELECT SIN(PI());
+SELECT COS(PI()); 
+
+SELECT TAN(PI());
+ 
+SELECT ACOS(1); 
+SELECT ACOS(1.01); 
+
+SELECT ASIN(0.2); 
+
+SELECT ATAN(1); 
+
+CREATE TABLE `owners` (
+`owner_id` int(11) NOT NULL AUTO_INCREMENT,
+`owner` varchar(30) DEFAULT NULL,
+PRIMARY KEY (`owner_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+select * from owners;
+insert into owners values ('1','kanara bank');
+insert into owners values ('2','kvp bank');
+insert into owners values ('3','state bank');
+insert into owners values ('4','government bank');
+insert into owners values ('5','barath bank');
+
+SELECT ACOS(1.01); 
+SELECT ASIN(0.2); 
+SELECT ATAN(2); 
+
+ SELECT COT(12);
+ SELECT RADIANS(90) ;
+SELECT SIN(RADIANS(90)) ;
+SELECT DEGREES(1), DEGREES(PI());
+
+SELECT ROUND(4.51);
+SELECT ROUND(4.49) ;
+SELECT ROUND(-4.51);
+
+SELECT ROUND(45e-1);
+SELECT ROUND(55e-1) ;
+
+SELECT CEIL(1.23);
+SELECT CEILING(4.83);
+
+SELECT POW(2,2); 
+SELECT POW(4,2); 
+
+SELECT SQRT(16); 
+SELECT SQRT(-3); 
+
+ SELECT ABS(2); 
+SELECT ABS(-46);
+
+select CHAR_LENGTH('foobar') ;
+select CHAR_LENGTH('fööbar') ;
+
+ select hex('fööbar') ;
+select HEX('fööbar') ;
+SELECT SUBSTRING('foobarbaz', 4); 
+
+SELECT SUBSTRING('foobarbaz' FROM 4);
+
+SELECT SUBSTRING('foobarbaz', -6); 
+SELECT SUBSTRING('foobarbaz' FROM -6); 
+
+SELECT SUBSTRING('foobarbaz', 4, 3); 
+SELECT SUBSTRING('foobarbaz' FROM 4 FOR 3); 
+
+SELECT SUBSTRING('foobarbaz', -6, 3); 
+SELECT SUBSTRING('foobarbaz' FROM -6 FOR 3); 
+
+select UPPER('fOoBar') ;
+select UCASE('fOoBar') ;
+ 
+ select LOWER('fOoBar');
+select LCASE('fOoBar');
+
+select REPLACE('foobarbaz', 'bar', 'BAR') ;
+select REPLACE('foobarbaz', 'zzz', 'ZZZ') ;
+
+SELECT FIND_IN_SET('b','a,b,c');
+
+SELECT FIND_IN_SET('d','a,b,c');
+
+select NOW() + INTERVAL 1 DAY ;
+select CURDATE() - INTERVAL 4 ;
+
+
+ SELECT SYSDATE();
+
+SELECT CURDATE();
+
+ Select Now();
+ 
+ SELECT NOW();
+SET time_zone='Asia/Kolkata';
+SELECT NOW();
+SET time_zone='UTC';
+SELECT NOW();
+
+SELECT @@time_zone
+ 
+ CREATE TABLE t (qty INT, price INT);
+ INSERT INTO t VALUES(3, 50);
+ CREATE VIEW v AS SELECT qty, price, qty*price AS value FROM t;
+SELECT * FROM v;
+
+
+  CREATE TABLE Person (
+ PersonID INT UNSIGNED NOT NULL,
+ LastName VARCHAR(66) NOT NULL,
+ FirstName VARCHAR(66),
+ Address VARCHAR(255),
+ City VARCHAR(66),
+ PRIMARY KEY (PersonID)
+);
+
+insert into Person values('1','easy','last','no 3 new street','trichy');
+insert into Person values('2','bagu','nanai','new branch street','chennai');
+insert into Person values('3','easy','shap','no 4 babu street','bangular');
+insert into Person values('4','mani','sanker','no 4 santhi street','brazel');
+insert into Person values('5','eiey','gokul','no 46 gandhi nager','trichy');
+insert into Person values('6','santhi','gandhi','no 3 babu nager','delhi');
+insert into Person values('7','taka','baka','no 33 danda nager','mumbai');
+insert into Person values('8','jana','gayu','no 34 tathi ma nager ','podachery');
+select * from Person;
+
+
+CREATE TABLE Account (
+ AccountID INT UNSIGNED NOT NULL,
+ AccountNo INT UNSIGNED NOT NULL,
+PersonID INT UNSIGNED,
+ PRIMARY KEY (AccountID),
+ FOREIGN KEY (PersonID) REFERENCES Person (PersonID)
+) ENGINE=InnoDB;
+drop table Account;
+ 
+ 
+ CREATE TABLE `TestLastUpdate` (
+ `ID` INT NULL,
+ `Name` VARCHAR(50) NULL,
+ `Address` VARCHAR(50) NULL,
+ `LastUpdate` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+)
+ select * from TestLastUpdate;
+ drop table TestLastUpdate;
+ 
+ CREATE TABLE stack (
+ id_user INT,
+ username VARCHAR(30),
+ password VARCHAR(30)
+);
+select * from stack;
+insert into stack values('5','think','game');
+insert into stack values('6','vasu','blad');
+insert into stack values('7','deepa','fathima');
+insert into stack values('8','kannan','1234343');
+insert into stack values('9','kaxmi','28738738');
+insert into stack values('10','janani','394949');
+
+CREATE DATABASE stackoverflow;
+USE stackoverflow;
+Create table stack(
+ id_user int NOT NULL,
+ username varchar(30) NOT NULL,
+ password varchar(30) NOT NULL
+);
+select * from stack;
+insert into stack values('1','nani','87928737');
+insert into stack values('2','yuman','87928737');
+insert into stack values('3','fami','87928737');
+insert into stack values('4','gandi','87928737');
+insert into stack values('5','gayi','87928737');
+insert into stack values('6','santhi','87928737');
+insert into stack values('7','hari','87928737');
+
+  use raju;
+
+ ALTER TABLE stack ADD COLUMN submit varchar(100);
+ALTER TABLE stack DROP COLUMN submit; 
+ALTER TABLE stack MODIFY submit varchar(100); 
+ALTER TABLE stack CHANGE submit submit_date DATETIME NOT NULL; 
+
+  ALTER TABLE employee  ADD INDEX `index_name` (`column_name`);
+  
+create table  users (
+ firstname varchar(20),
+ lastname varchar(20),
+ age char(2)
+);
+
+insert into users values('king','kong','45');
+insert into users values('santhi','baoa','47');
+insert into users values('babu','babi','55');
+insert into users values('yana','mana','45');
+insert into users values('tkker','takka','45');
+insert into users values('ranga','raja','66');
+insert into users values('durga','davi','56');
+insert into users values('uma','davi','88');
+
+select * from users;
+
+CREATE TABLE tbl(
+ id INT NOT NULL AUTO_INCREMENT,
+ title VARCHAR(100) NOT NULL,
+ author VARCHAR(40) NOT NULL,
+ submission_date DATE,
+ PRIMARY KEY (id)
+);
+select * from tbl;
+insert into tbl values('1','tiger','singam','22/2/23');
+insert into tbl values('2','gammer','singam','32/2/23');
+insert into tbl values('3','framo','singam','24/1/23');
+insert into tbl values('4','dampo','singam','35/3/22');
+insert into tbl values('5','dannq','singam','25/2/23');
+insert into tbl values('6','fathima','singam','15/2/23');
+
+DROP TABLE tbl;
+
+ LOCK TABLES clients READ;
+select * from clients ;
+LOCK TABLES clients WRITE;
+
+SHOW OPEN TABLES;
+ 
+ SET SQL_SAFE_UPDATES = 0;
+
+ SET SQL_SAFE_UPDATES = 1;
+
+ CREATE TABLE userDetails(
+ userId INT(10) NOT NULL AUTO_INCREMENT,
+ firstName VARCHAR(50),
+ lastName VARCHAR(50),
+ isActive INT(1) DEFAULT 0,
+ PRIMARY KEY (userId) );
+--->and now while inserting
+INSERT INTO userDetails VALUES (NULL ,'John', 'Doe', 1));
+
+ 
+ 
+ CREATE TABLE product
+(
+ id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ type VARCHAR(50) NOT NULL,
+ name VARCHAR(255) NOT NULL
+);
+CREATE TABLE product_type
+(
+ name VARCHAR(50) NOT NULL PRIMARY KEY
+);
+CREATE TABLE product_type_count
+(
+ type VARCHAR(50) NOT NULL PRIMARY KEY,
+ count INT(10) UNSIGNED NOT NULL DEFAULT 0
+);
+INSERT INTO product_type (name) VALUES
+ ('dress'),
+ ('food');
+ 
+INSERT INTO product (type, name) VALUES
+ ('dress', 'T-shirt'),
+ ('dress', 'Trousers'),
+ ('food', 'Apple'),
+ ('food', 'Tomatoes'),
+ ('food', 'Meat');
+select * from product_type;
+select * from product;
+
+DROP PROCEDURE IF EXISTS product_count;
+ 
+ SET @s = 'SELECT SQRT(POW(?,2) + POW(?,2)) AS hypotenuse';
+PREPARE stmt2 FROM @s;
+SET @a = 6;
+SET @b = 8;
+EXECUTE stmt2 USING @a, @b;
+
+ 
+ CREATE TABLE table_name (
+ id INT NOT NULL AUTO_INCREMENT,
+ json_col JSON,
+ PRIMARY KEY(id)
+);
+
+select * from table_name;
+insert into table_name values('1','22');
+insert into table_name values('2','23');
+insert into table_name values('3','45');
+insert into table_name values('4','34');
+insert into table_name values('5','34');
+insert into table_name values('6','26');
+insert into table_name values('7','66');
+insert into table_name values('8','99');
+insert into table_name values('9','11');
+
+INSERT INTO
+ table_name (json_col)
+VALUES
+ ('{"City": "Galle", "Description": "Best damn city in the world"}');
+
+UPDATE
+ myjson
+SET
+ dict=JSON_ARRAY_APPEND(dict,'$.variations','scheveningen')
+WHERE
+ id = 2;
+ SELECT * FROM myjson
+ 
+ CREATE TABLE account (acct_num INT, amount DECIMAL(10,2));
+
+
+CREATE TRIGGER ins_sum BEFORE INSERT ON account
+  FOR EACH ROW SET @sum = @sum + NEW.amount;
+select * from account;
+insert into account values('20240001','15000');
+insert into account values('20240002','14000');
+insert into account values('20240003','13000');
+insert into account values('20240004','20000');
+insert into account values('20240005','23000');
+insert into account values('20240006','22000');
+insert into account values('20240007','15000');
+insert into account values('20240008','11000');
+insert into account values('20240009','100000');
+
+
+SET @sum = 0;
+ INSERT INTO account VALUES(137,14.98),(141,1937.50),(97,-100.00);
+ SELECT @sum AS 'Total amount inserted';
+
+select innodb_io_capacity = 2500;
+select innodb_io_capacity_max = 3000;
+
+select innodb_buffer_pool_size = 10G
+
+SHOW VARIABLES WHERE variable_name='event_scheduler varchar(200)';
+ 
+ create table theMessages
+( id INT AUTO_INCREMENT PRIMARY KEY,
+ userId INT NOT NULL,
+ message VARCHAR(255) NOT NULL,
+ updateDt DATETIME NOT NULL,
+ KEY(updateDt)
+);
+
+INSERT theMessages(userId,message,updateDt) VALUES (1,'message 123','2015-08-24 11:10:09');
+INSERT theMessages(userId,message,updateDt) VALUES (7,'message 124','2015-08-29');
+INSERT theMessages(userId,message,updateDt) VALUES (1,'message 125','2015-09-03 12:00:00');
+INSERT theMessages(userId,message,updateDt) VALUES (1,'message 126','2015-09-03 14:00:00');
+insert into theMessages values('2','message 143','2015-08-01 15:00:00');
+insert into theMessages values('5','message 128','2015-09-09 15:20:00');
+insert into theMessages values('9','message 461','2017-08-02 12:20;00');
+insert into theMessages values('2','message 342','2018-09-02 11:12;00');
+insert into theMessages values('5','message 234','2024-01-02 11:02:02');
+select * from theMessages ;
+
+SHOW EVENTS FROM my_db_name; 
+SHOW EVENTS;
+SHOW EVENTS \G; 
+
+select ENUM('yes', 'no');
+select ENUM('male', 'female', 'other', 'decline-to-state')
+
+CREATE TABLE enum (
+ e ENUM('yes', 'no') NOT NULL,
+ enull ENUM('x', 'y', 'z') NULL
+);
+select * from enum;
+
+INSERT INTO enum (e, enull)
+ VALUES
+ insert into enum values('yes', 'x');
+insert into enum values ('no', 'y');
+insert into enum values  (yes, z);
+insert into enum values ('bad-value', 'bad-value');
+
+SELECT e, e+0 FROM enum;
+
+SELECT enull, enull+0 FROM enum;
+
+create docker-compose.yml:
+
+create docker-compose.yml:
+
+select cd PATH_TO_DOCKER-COMPOSE.YML
+select docker-compose up -d
+
+CREATE TABLE foo (
+ name varchar(200),
+ DBD varchar(50),
+ age int
+); 
+insert into foo values('raju','22/2/2002','21');
+insert into foo values('gokul','23/2/2002','21');
+insert into foo values('kong','11/1/2003','20');
+insert into foo values('laxmi','22/1/2004','19');
+insert into foo values('jana','23/2/2002','21');
+insert into foo values('hari','11/1/2005','17');
+insert into foo values('yan','23/2/2002','21');
+ 
+
+select * from foo;
+create table testTable(
+tid int
+);
+
+INSERT INTO testTable VALUES (1);
+INSERT INTO testTable VALUES (2);
+INSERT INTO testTable VALUES (3);
+INSERT INTO testTable VALUES (4);
+INSERT INTO testTable VALUES (5);
+INSERT INTO testTable VALUES (6);
+INSERT INTO testTable VALUES (7);
+INSERT INTO testTable VALUES (8);
+INSERT INTO testTable VALUES (9);
+INSERT INTO testTable VALUES (10);
+INSERT INTO testTable VALUES (12);
+INSERT INTO testTable VALUES (13);
+INSERT INTO testTable VALUES (14);
+select * from testTable;
+
+SELECT @@long_query_time;
+
+SELECT @@slow_query_log; 
+SELECT @@slow_query_log_file; 
+SELECT @@datadir; 
+SET GLOBAL slow_query_log=0; 
+SET GLOBAL slow_query_log=1; 
+
+SELECT @@general_log;
+
+SELECT @@general_log_file;  
+
+SET GLOBAL general_log_file='GeneralLogBegin_20160803_1420.log'; 
+
+ CREATE TABLE employees (
+ id INT NOT NULL,
+ fname VARCHAR(30),
+ lname VARCHAR(30),
+ hired DATE NOT NULL DEFAULT '1970-01-01',
+ separated DATE NOT NULL DEFAULT '9999-12-31',
+ job_code INT NOT NULL,
+ store_id INT NOT NULL
+);
+
+select * from employees;
+
+ALTER TABLE employees PARTITION BY RANGE (store_id) (
+ PARTITION p0 VALUES LESS THAN (6),
+ PARTITION p1 VALUES LESS THAN (11),
+ PARTITION p2 VALUES LESS THAN (16),
+ PARTITION p3 VALUES LESS THAN MAXVALUE
+);
+
+ALTER TABLE employees PARTITION BY LIST(store_id) (
+ PARTITION pNorth VALUES IN (3,5,6,9,17),
+ PARTITION pEast VALUES IN (1,2,10,11,19,20),
+ PARTITION pWest VALUES IN (4,12,13,14,18),
+ PARTITION pCentral VALUES IN (7,8,15,16)
+);
+use raju;
+
+SHOW MASTER STATUS;
+select -h (--host);
+
+CREATE TABLE `employeee` ( 
+id INT NOT NULL ,
+ name VARCHAR (200) NOT NULL,
+ sex VARCHAR (40) NOT NULL ,
+ designation VARCHAR (40) NOT NULL ,
+ dob VARCHAR (40) NOT NULL
+ ); 
+select * from employeee;
+insert into employeee values('1','laxmi','female',' yaaoo','1/11/2024');
+insert into employeee values('2','gayu','female','boobo','22/2/2024');
+insert into employeee values('3','hari','male','naanaa','23/2/2024');
+insert into employeee values('4','jana','male','noojaa','12/2/2024');
+insert into employeee values('5','fethima','female','booboo','2/2/2024');
+insert into employeee values('6','vasu','male','ummmm','24/2/2024');
+insert into employeee values('7','karthika','female','jhhhh','15/2/2024');
+insert into employeee values('8','kamala','female','hooo','31/6/2015');
+insert into employeee values('9','kannan','male','jooo','15/10/2024');
+select * from employeee;
+ 
+ SELECT * from City UNION SELECT * from  Suppliers;
+ORDER BY City;
+
+create table City( 
+address varchar(100)
+);
+create table Customers(
+Customers_name varchar(100)
+);
+create table Suppliers (
+suppliers_id int 
+);
+insert into City values('delhi');
+insert into City values('mumbai');
+insert into City values('balgular');
+insert into City values('kerla');
+insert into City values('kolkotha');
+insert into City values('uk');
+insert into City values('stlenka');
+insert into City values('singorpur');
+insert into City values('bambai');
+insert into City values('new delhi');
+
+insert into Customers values('kamala');
+insert into Customers values('kannan');
+insert into Customers values('gandi');
+insert into Customers values('nandhini');
+insert into Customers values('klpana');
+insert into Customers values('santhi');
+insert into Customers values('durga');
+insert into Customers values('laxmi');
+insert into Customers values('jana');
+insert into Customers values('nomikeya');
+ 
+ insert into  Suppliers values('1');
+  insert into  Suppliers values('2');
+ insert into  Suppliers values('3');
+ insert into  Suppliers values('4');
+ insert into  Suppliers values('5');
+ insert into  Suppliers values('6');
+ insert into  Suppliers values('7');
+ insert into  Suppliers values('8');
+ insert into  Suppliers values('9');
+ insert into  Suppliers values('10');
+ 
+  CREATE TABLE example
+(`applicant_id` INT, `company_name` VARCHAR(255), `end_date` DATE);
+
+
+insert into example values('1','  Google ' ,'NULL ');
+insert into example values(' 1','  Initech ',' 2013-01-31'); 
+insert into example values(' 2','  Woodworking.com','  2016-08-25 ');
+insert into example values(' 2 ',' NY Times ',' 2013-11-10 ');
+insert into example values(' 3','  NFL.com ',' 2014-04-13' );
+select * from example;
+
+SELECT * FROM example WHERE end_date > '2016-01-01';
+SELECT * FROM example WHERE end_date > '2016-01-01' OR end_date IS NULL;
+SELECT applicant_id, MAX(end_date) FROM example GROUP BY applicant_id;
+
+SELECT
+ applicant_id,
+ CASE WHEN MAX(end_date is null) = 1 THEN 'present' ELSE MAX(end_date) END
+ max_date
+FROM example
+GROUP BY applicant_id;
+
+SELECT
+ data.applicant_id,
+ data.company_name,
+ data.max_date
+FROM (
+ SELECT
+ *,
+ CASE WHEN end_date is null THEN 'present' ELSE end_date END max_date
+ FROM example
+) data
+INNER JOIN (
+SELECT
+ applicant_id,
+ CASE WHEN MAX(end_date is null) = 1 THEN 'present' ELSE MAX(end_date) END max_date
+FROM
+ example
+GROUP BY applicant_id
+) j
+ON data.applicant_id = j.applicant_id AND data.max_date = j.max_date;
+
+ select ROUND(UNIX_TIMESTAMP(NOW(3)) * 1000.0, 0);
+
+ CREATE TABLE times (
+ dt DATETIME(3),
+ ts TIMESTAMP(3)
+);
+INSERT INTO times VALUES ('2015-01-01',' 16:34:00.123');
+insert into times values('2015-01-01 16:34:00.128');
+insert into times values('2014-02-02','16:23:00.123');
+
+select * from times;
+
+SELECT DATE_FORMAT(NOW(3), '%Y-%m-%d %H:%i:%s.%f')
+
+select FROM_UNIXTIME(1478960868932 * 0.001)
+
+ SHOW VARIABLES;
+SHOW SESSION VARIABLES;
+SHOW GLOBAL VARIABLES;
+ 
+ SHOW STATUS;
+
+select WHERE a = '12' OR b = '78'
+
+
+ select * from order
+ create table orders (
+ order_name varchar(200)
+ );
+ insert into orders values('shapper');
+  insert into orders values('foood');
+   insert into orders values('dress');
+    insert into orders values('male dress');
+     insert into orders values('female dress');
+      insert into orders values('shou');
+       insert into orders values('plastack glass');
+        insert into orders values('smart phone');
+         insert into orders values('bangele');
+         select * from orders;
+ 
+ 
